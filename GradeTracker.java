@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 import java.util.ArrayList;
 
-public class Main {
+public class GradeTracker {
     public static void main(String[] args) {
             ArrayList<Double>  grades  = new ArrayList<Double>();
             Scanner input = new Scanner(System.in);
