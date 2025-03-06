@@ -1,0 +1,36 @@
+Products project:
+
+
+	The basis of this project is writing a class and manipulating objects of that class. The first step is the writing of the "Product" class
+	We need 3 values for the class: id, name, and quantity. We also need constructors for this class, a default constructor that sets all 
+	values to the default value and a normal constructor, for constructing an object of that class with predefined values.
+	We also need getters and setters for the retrieval and manipulation of these values. I would like to do this dynamically so I only need
+	1 getter and 1 setter, and the way I've found to achieve this is using the java.lang.reflect.Field package. This package allows me 
+	to access and manipulate the variables dynamically. 
+
+	For example:
+	
+
+	> String foo = "oingo";
+	> String bar = "boingo";
+	> String input = "foo";
+	> Field field = this.getClass().getDeclaredField(input);
+	> field.setAccessible(true);
+	> System.out.println(field.get(this).toString());
+	"oingo"
+
+
+	> String input2 = "bar";
+	> Field field2 = this.getClass().getDeclaredField(input2);
+	> field2.setAccessible(true);
+	> System.out.println(field2.get(this).toString());
+	"boingo"
+
+	As you can see, the Field package is very useful for this particular use case. The Field package also allows for manipulation of the values.
+	Now that we have our getter and setter, as well as our constructors, we can move onto the actual use of this class. This will be in a 
+	different file as well. The program will first ask for user input, in the form of three prompts for the name, id, and quantity. It will ask for user
+	input until the user inputs "-1". One problem I can forsee is entering of unfinished objects into the object list, if the user inputs the name
+	of the product and then -1. This is fixed by only entering the object into the object list after quantity is entered. After the user is done
+	inputting data, the program will iterate through the list of objects and get the quantity of each. If the quantity is less than 5, the program
+	will print a warning that the quantity is low. The main thing I would like to fix is to check if items are duplicate names or ids, and reject user
+	input that are duplicates
