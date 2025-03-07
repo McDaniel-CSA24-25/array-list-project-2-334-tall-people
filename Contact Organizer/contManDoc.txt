@@ -1,0 +1,39 @@
+My Role in this project was the list organizer/contact manager project.
+
+Basically i have to create an arraylist of "contacts" that have names and phone numbers. I must then create methods, classes, and constructors to let the user either add a contact, look for a contact, or display their contacts.
+
+The outline of my program will look something like this
+
+imports
+
+
+arraylist: contacts
+
+addcont method(String name, String number)
+	this will also check to see if a contact already exists
+
+method to search for contact using name(String name)
+
+	will loop through contacts and print if found
+
+method to sort contacts
+	will use Collections.sort() from the collects package
+
+
+
+public static void main
+
+scanner input
+listOrganizer constructor
+int to know user input
+
+while true(print out a menu that asks to add, search, or show contacts)
+
+a try catch to notify user if they put an invalid number in
+
+user choice 1 will use add cont and my constructor to add a contact
+
+user choice 2 will allow a user to search a contact by using constructor and lookup method, will tell user the index position of the contact if found
+
+user choice 3 will use the sortcont method to alphabetically sort the contacts
+
